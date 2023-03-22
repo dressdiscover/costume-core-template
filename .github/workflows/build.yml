@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/configure-pages@v3
         id: configure_pages
-      - uses: paradicms/airtrable-ssg-action@v1-beta
+      - uses: paradicms/airtable-ssg-action@v1-beta
         env:
           NEXT_BASE_PATH: ${{ steps.configure_pages.outputs.base_path }}
         with:
