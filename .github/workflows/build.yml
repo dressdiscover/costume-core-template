@@ -11,12 +11,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/configure-pages@v3
         id: configure_pages
-      - uses: paradicms/airtable-ssg-action@v1-beta
-        env:
-          NEXT_BASE_PATH: ${{ steps.configure_pages.outputs.base_path }}
+      - uses: paradicms/airtable-etl-action@v1-beta
         with:
           airtable_access_token: ${{ secrets.AIRTABLE_ACCESS_TOKEN }}
           airtable_base_id: ${{ secrets.AIRTABLE_BASE_ID }}
+      - uses: paradicms/ssg-action@v1-beta
+        env:
+          NEXT_BASE_PATH: ${{ steps.configure_pages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
   deploy:
