@@ -12,7 +12,7 @@ PROJECTS_DIR_PATH=$PWD/../..
 cd $PROJECTS_DIR_PATH/paradicms/lib/py/ssg
 
 poetry run $PROJECTS_DIR_PATH/airtable-etl-action/action.py \
-  --cache-directory-path $CACHE_DIR_PATH \
+  --cache-directory-path $PROJECTS_DIR_PATH/paradicms/data \
   --loaded-data-directory-path $DATA_DIR_PATH \
   --pipeline-id costume_core_template \
   "$@"
